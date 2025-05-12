@@ -31,6 +31,7 @@ docker compose version
 
 
 ### Clone repos
+echo "==> Cloning repos & starting services"
 REPOS=(
     # homelab_nginx
     # homelab_pihole
@@ -40,14 +41,14 @@ REPOS=(
     # wekan
 )
 for REPO in "${REPOS[@]}"; do
-    echo "cloning $REPO"
+    echo "==> Cloning $REPO"
     if [[ ! -f $REPO ]]; then
         git clone https://github.com/jason-galea/$REPO.git
     fi
     (
         cd $REPO
         pwd
-        echo "docker compose up -d"
+        echo "==> Starting $REPO"
     )
     sleep 1
 done
