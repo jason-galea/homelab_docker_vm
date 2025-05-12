@@ -3,6 +3,8 @@
 
 ### Install docker
 ### https://docs.docker.com/engine/install/debian/
+echo "==> Installing docker"
+set +x
 sudo apt-get update -y
 sudo apt-get install -y ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
@@ -21,6 +23,7 @@ sudo apt-get install -y \
     containerd.io \
     docker-buildx-plugin \
     docker-compose-plugin
+set -x
 
 docker version
 docker compose version
@@ -38,7 +41,9 @@ REPOS=(
 )
 for REPO in "${REPOS[@]}"; do
     echo "cloning $REPO"
-    git clone https://github.com/jason-galea/$REPO.git
+    if [[ ! -f $REPO ]]; then
+        git clone https://github.com/jason-galea/$REPO.git
+    fi
     (
         cd $REPO
         pwd
