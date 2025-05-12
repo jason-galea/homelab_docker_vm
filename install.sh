@@ -40,13 +40,14 @@ REPOS=(
 )
 for REPO in "${REPOS[@]}"; do
     echo -e "\n==> Cloning $REPO"
-    if [ ! -f $REPO ]; then
+    if [ ! -d $REPO ]; then
         git clone https://github.com/jason-galea/$REPO.git
     fi
     (
         cd $REPO
         pwd
         echo -e "\n==> Starting $REPO"
+        docker compose up -d
     )
     sleep 1
 done
