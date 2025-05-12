@@ -3,8 +3,7 @@
 
 ### Install docker
 ### https://docs.docker.com/engine/install/debian/
-echo "==> Installing docker"
-set +x
+echo -e "\n==> Installing docker"
 sudo apt-get update -y
 sudo apt-get install -y ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
@@ -23,15 +22,14 @@ sudo apt-get install -y \
     containerd.io \
     docker-buildx-plugin \
     docker-compose-plugin
-set -x
 
-docker version
-docker compose version
+# docker version
+# docker compose version
 # sudo docker run hello-world
 
 
 ### Clone repos
-echo "==> Cloning repos & starting services"
+echo -e "\n==> Cloning repos & starting services"
 REPOS=(
     # homelab_nginx
     # homelab_pihole
@@ -41,14 +39,14 @@ REPOS=(
     # wekan
 )
 for REPO in "${REPOS[@]}"; do
-    echo "==> Cloning $REPO"
-    if [[ ! -f $REPO ]]; then
+    echo -e "\n==> Cloning $REPO"
+    if [ ! -f $REPO ]; then
         git clone https://github.com/jason-galea/$REPO.git
     fi
     (
         cd $REPO
         pwd
-        echo "==> Starting $REPO"
+        echo -e "\n==> Starting $REPO"
     )
     sleep 1
 done
