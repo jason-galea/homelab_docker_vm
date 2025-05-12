@@ -29,16 +29,16 @@ docker compose version
 
 ### Clone repos
 REPOS=(
-    # https://github.com/jason-galea/homelab_nginx.git
-    # https://github.com/jason-galea/homelab_pihole.git
-    https://github.com/jason-galea/price_scraper.git
+    # homelab_nginx
+    # homelab_pihole
+    price_scraper
     # bookstack
     # unifi
     # wekan
 )
 for REPO in "${REPOS[@]}"; do
     echo "cloning $REPO"
-    git clone $REPO
+    git clone https://github.com/jason-galea/$REPO.git
     (
         cd $REPO
         pwd
