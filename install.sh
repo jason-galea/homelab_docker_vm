@@ -39,10 +39,12 @@ REPOS=(
     # wekan
 )
 for REPO in "${REPOS[@]}"; do
+
     echo -e "\n==> Cloning $REPO"
     if [ ! -d $REPO ]; then
         git clone https://github.com/jason-galea/$REPO.git
     fi
+
     (
         cd $REPO
         pwd
