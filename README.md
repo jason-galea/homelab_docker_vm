@@ -7,8 +7,10 @@ Tested with Debian 12 headless, in a Proxmox VM
 
 ## Install services
 
-- `git clone git@github.com:jason-galea/homelab_docker_vm.git`
-- `sudo ./install.sh`
+- `sudo apt install -y git`
+- `git clone https://github.com/jason-galea/homelab_docker_vm.git`
+- `cd homelab_docker_vm`
+- `./install.sh`
 
 
 ## Refresh services
