@@ -18,10 +18,23 @@ sudo apt-get update -y
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo docker run hello-world
 
-### TODO: validate docker service
-
 
 ### TODO: clone a bunch of repos
-
-
-### TODO: start services
+REPOS=(
+    # https://github.com/jason-galea/homelab_nginx.git
+    # https://github.com/jason-galea/homelab_pihole.git
+    https://github.com/jason-galea/price_scraper.git
+    # bookstack
+    # unifi
+    # wekan
+)
+for REPO in "${strings[@]}"; do
+    echo "cloning $REPO"
+    # git clone $REPO
+    # (
+    #     cd $REPO
+    #     pwd
+    #     echo "docker compose up -d"
+    # )
+    sleep 1
+done
