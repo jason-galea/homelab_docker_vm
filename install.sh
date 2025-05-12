@@ -36,13 +36,13 @@ REPOS=(
     # unifi
     # wekan
 )
-for REPO in "${strings[@]}"; do
+for REPO in "${REPOS[@]}"; do
     echo "cloning $REPO"
-    # git clone $REPO
-    # (
-    #     cd $REPO
-    #     pwd
-    #     echo "docker compose up -d"
-    # )
+    git clone $REPO
+    (
+        cd $REPO
+        pwd
+        echo "docker compose up -d"
+    )
     sleep 1
 done
