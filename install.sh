@@ -34,9 +34,9 @@ REPOS=(
     homelab_nginx
     homelab_pihole
     price_scraper
-    # bookstack
-    # unifi
-    # wekan
+    # homelab_bookstack
+    # homelab_unifi
+    # homelab_wekan
 )
 for REPO in "${REPOS[@]}"; do
     REPO_PATH="$HOME/$REPO"
