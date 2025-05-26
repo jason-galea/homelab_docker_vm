@@ -31,22 +31,23 @@ sudo apt-get install -y \
 ### Clone repos
 echo -e "\n==> Cloning repos & starting services"
 REPOS=(
-    # homelab_nginx
-    # homelab_pihole
+    homelab_nginx
+    homelab_pihole
     price_scraper
     # bookstack
     # unifi
     # wekan
 )
 for REPO in "${REPOS[@]}"; do
+    REPO_PATH="~/$REPO"
 
     echo -e "\n==> Cloning $REPO"
-    if [ ! -d $REPO ]; then
-        git clone https://github.com/jason-galea/$REPO.git
+    if [ ! -d $REPO_PATH ]; then
+        git clone https://github.com/jason-galea/$REPO.git $REPO_PATH
     fi
 
     (
-        cd $REPO
+        cd REPO_PATH
         pwd
         echo -e "\n==> Starting $REPO"
         docker compose up -d
