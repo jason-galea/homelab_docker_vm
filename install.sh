@@ -44,12 +44,14 @@ for REPO in "${REPOS[@]}"; do
     if [ ! -d $REPO_PATH ]; then
         echo -e "\n==> Cloning $REPO"
         git clone https://github.com/jason-galea/$REPO.git $REPO_PATH
+    else
+        echo -e "\n==> Repo '$REPO' already exists at '$REPO_PATH'"
     fi
 
     (
+        echo -e "\n==> Changing dir to '$REPO_PATH'"
         cd $REPO_PATH
-        echo "==> $(pwd)"
-        echo -e "\n==> Starting $REPO"
+        echo -e "\n==> Starting '$REPO'"
         docker compose up -d
     )
     sleep 1
