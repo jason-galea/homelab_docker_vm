@@ -45,7 +45,8 @@ for REPO in "${REPOS[@]}"; do
         echo -e "\n==> Cloning $REPO"
         git clone https://github.com/jason-galea/$REPO.git $REPO_PATH
     else
-        echo -e "\n==> Repo '$REPO' already exists at '$REPO_PATH'"
+        echo -e "\n==> Repo '$REPO' already exists at '$REPO_PATH', pulling latest changes"
+        git -C $REPO_PATH pull
     fi
 
     (
