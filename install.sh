@@ -39,7 +39,7 @@ REPOS=(
     # wekan
 )
 for REPO in "${REPOS[@]}"; do
-    REPO_PATH="~/$REPO"
+    REPO_PATH="$HOME/$REPO"
 
     if [ ! -d $REPO_PATH ]; then
         echo -e "\n==> Cloning $REPO"
