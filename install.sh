@@ -41,14 +41,14 @@ REPOS=(
 for REPO in "${REPOS[@]}"; do
     REPO_PATH="~/$REPO"
 
-    echo -e "\n==> Cloning $REPO"
     if [ ! -d $REPO_PATH ]; then
+        echo -e "\n==> Cloning $REPO"
         git clone https://github.com/jason-galea/$REPO.git $REPO_PATH
     fi
 
     (
-        cd REPO_PATH
-        pwd
+        cd $REPO_PATH
+        echo "==> $(pwd)"
         echo -e "\n==> Starting $REPO"
         docker compose up -d
     )
