@@ -34,7 +34,7 @@ REPOS=(
     homelab_nginx
     homelab_pihole
     price_scraper
-    # homelab_bookstack
+    homelab_bookstack
     # homelab_unifi
     # homelab_wekan
 )
@@ -49,6 +49,7 @@ for REPO in "${REPOS[@]}"; do
         git -C $REPO_PATH pull
     fi
 
+    ### compose -f?? ehhh whatever
     (
         echo -e "\n==> Changing dir to '$REPO_PATH'"
         cd $REPO_PATH
