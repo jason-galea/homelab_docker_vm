@@ -36,10 +36,11 @@ REPOS=(
     homelab_pihole
     # homelab_unifi
 
-    ### services?????
+    ### misc
     price_scraper
     homelab_bookstack
     # homelab_wekan
+    homelab_crystalline
 )
 for REPO in "${REPOS[@]}"; do
     REPO_PATH="$HOME/$REPO"
