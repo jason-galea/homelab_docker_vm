@@ -31,11 +31,14 @@ sudo apt-get install -y \
 ### Clone repos
 echo -e "\n==> Cloning repos & starting services"
 REPOS=(
+    ### infra
     homelab_nginx
     homelab_pihole
+    # homelab_unifi
+
+    ### services?????
     price_scraper
     homelab_bookstack
-    # homelab_unifi
     # homelab_wekan
 )
 for REPO in "${REPOS[@]}"; do
