@@ -41,6 +41,7 @@ REPOS=(
     homelab_bookstack
     # homelab_wekan
     homelab_crystalline
+    homelab_vector
 )
 for REPO in "${REPOS[@]}"; do
     REPO_PATH="$HOME/$REPO"
