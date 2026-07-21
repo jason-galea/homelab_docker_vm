@@ -34,7 +34,7 @@ REPOS=(
     ### infra
     homelab_nginx
     homelab_pihole
-    # homelab_unifi
+    homelab_unifi
 
     ### misc
     price_scraper
@@ -42,7 +42,6 @@ REPOS=(
     # homelab_wekan
     homelab_crystalline
     homelab_vector
-    homelab_unifi
 )
 for REPO in "${REPOS[@]}"; do
     REPO_PATH="$HOME/$REPO"
