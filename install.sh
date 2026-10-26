@@ -32,11 +32,11 @@ sudo apt-get install -y \
 echo -e "\n==> Cloning repos & starting services"
 REPOS=(
     ### infra
-    homelab_nginx
     homelab_pihole
+    homelab_nginx
     homelab_unifi
 
-    ### misc
+    ### services
     price_scraper
     homelab_bookstack
     # homelab_wekan
